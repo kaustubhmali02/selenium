@@ -24,10 +24,11 @@ public class CaseStudy_Selenium {
 
     @BeforeTest
     private void initChromeDriver() {
-        System.setProperty("webdriver.chrome.driver", "/home/ubuntu/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/home/kaustubh/jenkins/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         options.addArguments("--disable-gpu");
+        options.addArguments("--no-sandbox");
         options.addArguments("--no-startup-window");
         driver = new ChromeDriver(options);
     }
