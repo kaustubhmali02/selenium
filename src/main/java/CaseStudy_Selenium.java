@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.TestListenerAdapter;
 import org.testng.TestNG;
@@ -26,10 +27,7 @@ public class CaseStudy_Selenium {
     private void initChromeDriver() {
         System.setProperty("webdriver.chrome.driver", "/home/kaustubh/jenkins/chromedriver");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        options.addArguments("--disable-gpu");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--no-startup-window");
+        options.setHeadless(true);
         driver = new ChromeDriver(options);
     }
 
